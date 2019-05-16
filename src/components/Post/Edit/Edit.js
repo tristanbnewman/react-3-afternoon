@@ -20,7 +20,10 @@ export default class Edit extends Component {
   }
 
   updatePost() {
+    console.log(this.state.text)
 
+    this.props.updatePostFn(this.props.id, this.state.text)
+    this.props.hideEdit()
   }
 
   render() {
@@ -38,7 +41,7 @@ export default class Edit extends Component {
           {/* This saves your changes made */}
           <button id="Edit__controls-update" 
                   className="Edit__control-btn"
-                  onClick={ this.updatePost }>
+                  onClick={this.updatePost}>
             Update
           </button>
 
